@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+
+/* CSS For fe */
+
+
+
+.checkbox-wrapper-61 input[type="checkbox"] {
+  visibility: hidden;
+  display: none;
+  padding-top: 4px;
+}
+
+.checkbox-wrapper-61 *,
+.checkbox-wrapper-61 ::after,
+.checkbox-wrapper-61 ::before {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-61 {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.checkbox-wrapper-61 .check {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper-61 .label svg {
+  vertical-align: middle;
+}
+
+.checkbox-wrapper-61 .path1 {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: 0.5s stroke-dashoffset;
+  opacity: 0;
+}
+
+.checkbox-wrapper-61 .check:checked + label svg g path {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}
